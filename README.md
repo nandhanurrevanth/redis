@@ -1,3 +1,19 @@
+
+
+
+- See the Redis release notes: http://download.redis.io/redis-stable/00-RELEASENOTES
+
+## Important: More documentation is available
+
+Please read the documentation in msvs\setups\documentation. This is the documentation that is bundled with the binaries, and contains vital information about configuring and deploying Redis on Windows.
+
+## How to build Redis using Visual Studio
+
+You can use the free Visual Studio Express 2013 for Windows Desktop edition available at http://www.microsoft.com/en-us/download/details.aspx?id=40787.
+
+- Open the solution file msvs\redisserver.sln in Visual Studio 2013, select a build configuration (Debug or Release) and target (Win32 or x64) then build.
+
+
 [![Windows Status](http://img.shields.io/appveyor/ci/MSOpenTech-lab/redis.svg?style=flat-square)](https://ci.appveyor.com/project/MSOpenTech-lab/redis)
 
 [![NuGet version](http://img.shields.io/nuget/v/redis-64.svg?style=flat-square)](http://www.nuget.org/packages/redis-64/)
@@ -22,19 +38,30 @@ Redis on Windows
 - Redis can be installed as a Windows Service.
 
 ## What's new since 2.8.12
+[![Windows Status](http://img.shields.io/appveyor/ci/MSOpenTech-lab/redis.svg?style=flat-square)](https://ci.appveyor.com/project/MSOpenTech-lab/redis)
 
-- See the Redis release notes: http://download.redis.io/redis-stable/00-RELEASENOTES
+[![NuGet version](http://img.shields.io/nuget/v/redis-64.svg?style=flat-square)](http://www.nuget.org/packages/redis-64/)
+[![NuGet downloads](http://img.shields.io/nuget/dt/redis-64.svg?style=flat-square)](http://www.nuget.org/packages/redis-64/)
 
-## Important: More documentation is available
+[![Chocolatey version](http://img.shields.io/chocolatey/v/redis-64.svg?style=flat-square)](http://www.chocolatey.org/packages/redis-64/)
+[![Chocolatey downloads](http://img.shields.io/chocolatey/dt/redis-64.svg?style=flat-square)](http://www.chocolatey.org/packages/redis-64/)
 
-Please read the documentation in msvs\setups\documentation. This is the documentation that is bundled with the binaries, and contains vital information about configuring and deploying Redis on Windows.
+Redis on Windows 
+===
 
-## How to build Redis using Visual Studio
+## Redis 2.8 Branch
 
-You can use the free Visual Studio Express 2013 for Windows Desktop edition available at http://www.microsoft.com/en-us/download/details.aspx?id=40787.
+- This is a port for Windows based on Redis 2.8. The latest version merged in 2.8.14.
+- There is support for the 64-bit version. We have dropped official support for the 32-bit version, though you can build it from source if desired.
+- The binaries (unsigned) have been moved to a zip file in the \bin folder to make them easier to find. The Release build automatically updates the
+  zip file.
+- Signed binaries can be downloaded using Nuget and Chocolatey.
+- There is a replacement for the UNIX fork() API that simulates the copy-on-write behavior using a memory mapped file.
+- Because Redis makes some assumptions about the values of File Descriptors, we have built a virtual file descriptor mapping layer. 
+- We are moving towards moving all Windows-specific changes into the Win32_Interop library.
+- Redis can be installed as a Windows Service.
 
-- Open the solution file msvs\redisserver.sln in Visual Studio 2013, select a build configuration (Debug or Release) and target (Win32 or x64) then build.
-
+## What's new since 2.8.12
     This should create the following executables in the msvs\$(Target)\$(Configuration) folder:
 
     - redis-server.exe
