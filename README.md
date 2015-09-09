@@ -6,6 +6,11 @@
 ## Important: More documentation is available
 
 Please read the documentation in msvs\setups\documentation. This is the documentation that is bundled with the binaries, and contains vital information about configuring and deploying Redis on Windows.
+- See the Redis release notes: http://download.redis.io/redis-stable/00-RELEASENOTES
+
+## Important: More documentation is available
+
+Please read the documentation in msvs\setups\documentation. This is the documentation that is bundled with the binaries, and contains vital information about configuring and deploying Redis on Windows.
 
 ## How to build Redis using Visual Studio
 
